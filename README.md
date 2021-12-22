@@ -12,7 +12,7 @@ PyQt5 >= 5.8
 ## Feature
 * ```findClicked``` Signal will be emitted when find button clicks
 * ```added``` Signal will be emitted when file's name is set in the QLineEdit
-* 'Open path' feature in context menu
+* "Open path" feature in context menu
 * Showing tooltip to show full path when QLineEdit is too short to do so
 * QLineEdit is set to read only in order to prevent malfunction from wrong input.
 
