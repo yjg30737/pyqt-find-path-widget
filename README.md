@@ -15,7 +15,7 @@ PyQt5 >= 5.8
 * "Open path" feature in context menu
 * Showing tooltip to show full path when QLineEdit is too short to do so
 * QLineEdit is set to read only in order to prevent malfunction from wrong input.
-* ```setLabel(label: str)``` to set the label. Label doesn't exist as default.
+* Being able to use ```setLabel(label: str)``` method to set the label. Label doesn't exist as default.
 
 ## Example
 ```python
