@@ -80,3 +80,13 @@ class FindPathWidget(QWidget):
             filename = filename[0]
             self.__pathLineEdit.setText(filename)
             self.added.emit(filename)
+
+
+if __name__ == "__main__":
+    import sys
+
+    app = QApplication(sys.argv)
+    ex = FindPathWidget()
+    ex.show()
+    sys.exit(app.exec_())
+
