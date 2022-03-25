@@ -11,6 +11,7 @@ setup(
     description='PyQt find path widget (QLabel - QLineEdit - QPushButton)',
     url='https://github.com/yjg30737/pyqt-find-path-widget.git',
     install_requires=[
-        'PyQt5>=5.8'
+        'PyQt5>=5.8',
+        'pyqt-resource-helper @ git+https://git@github.com/yjg30737/pyqt-resource-helper.git@main'
     ]
 )
