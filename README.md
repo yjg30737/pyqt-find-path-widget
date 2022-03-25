@@ -10,7 +10,7 @@ PyQt5 >= 5.8
 ```pip3 install git+https://github.com/yjg30737/pyqt-find-path-widget.git --upgrade```
 
 ## Included Packages
-* <a href="pyqt-resource-helper">https://github.com/yjg30737/pyqt-resource-helper.git</a>
+* <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
 
 ## Feature
 * ```findClicked``` Signal will be emitted when find button clicks
