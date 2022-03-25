@@ -1,5 +1,6 @@
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QPushButton, QHBoxLayout, QFileDialog, QLabel, QApplication
+from pyqt_resource_helper import PyQtResourceHelper
 
 from pyqt_find_path_widget.findPathLineEdit import FindPathLineEdit
 
@@ -16,29 +17,11 @@ class FindPathWidget(QWidget):
     def __initUi(self):
         self.__pathLineEdit = FindPathLineEdit()
 
-        self.__pathLineEdit.setStyleSheet('QLineEdit '
-                                          '{ '
-                                          'background-color: #444444; '
-                                          'color: #DDDDDD; '
-                                          'border: 1px solid #333333; '
-                                          '}')
-
         self.__pathFindBtn = QPushButton('Find...')
-        self.__pathFindBtn.setStyleSheet('QPushButton '
-                                         '{ '
-                                         'background-color: #222222; '
-                                         'color: #DDDDDD; '
-                                         'padding-left: 10px; '
-                                         'padding-right: 10px; '
-                                         'padding-top: 5px; padding-bottom: 5px; border: 1px solid #333333; }'
-                                         'QPushButton:hover'
-                                         '{'
-                                         'background-color: #444444; '
-                                         '}'
-                                         'QPushButton:pressed'
-                                         '{'
-                                         'background-color: #111111;'
-                                         '}')
+
+        PyQtResourceHelper.setStyleSheet([self.__pathLineEdit, self.__pathFindBtn],
+                                         ['style/lineedit.css', 'style/button.css'])
+
         self.__pathFindBtn.clicked.connect(self.__find)
 
         self.__pathLineEdit.setMaximumHeight(self.__pathFindBtn.sizeHint().height())
