@@ -9,17 +9,19 @@ class FindPathWidget(QWidget):
     findClicked = pyqtSignal()
     added = pyqtSignal(str)
 
-    def __init__(self):
+    def __init__(self, default_filename: str = ''):
         super().__init__()
         self.__initVal()
-        self.__initUi()
+        self.__initUi(default_filename)
 
     def __initVal(self):
         self.__ext_of_files = ''
         self.__directory = False
 
-    def __initUi(self):
+    def __initUi(self, default_filename: str = ''):
         self.__pathLineEdit = FindPathLineEdit()
+        if default_filename:
+            self.__pathLineEdit.setText(default_filename)
 
         self.__pathFindBtn = QPushButton('Find...')
 
