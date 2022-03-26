@@ -7,7 +7,7 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
-    packages_data={'pyqt_find_path_widget.style': ['button.css', 'lineedit.css']},
+    package_data={'pyqt_find_path_widget.style': ['button.css', 'lineedit.css']},
     description='PyQt find path widget (QLabel - QLineEdit - QPushButton)',
     url='https://github.com/yjg30737/pyqt-find-path-widget.git',
     install_requires=[
