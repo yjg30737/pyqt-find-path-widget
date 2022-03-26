@@ -11,8 +11,12 @@ class FindPathWidget(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.__ext_of_files = ''
+        self.__initVal()
         self.__initUi()
+
+    def __initVal(self):
+        self.__ext_of_files = ''
+        self.__directory = False
 
     def __initUi(self):
         self.__pathLineEdit = FindPathLineEdit()
@@ -57,12 +61,24 @@ class FindPathWidget(QWidget):
         self.findClicked.emit()
 
     def __find(self):
-        str_exp_files_to_open = self.__ext_of_files if self.__ext_of_files else 'All Files (*.*)'
-        filename = QFileDialog.getOpenFileName(self, 'Find', '', str_exp_files_to_open)
-        if filename[0]:
-            filename = filename[0]
-            self.__pathLineEdit.setText(filename)
-            self.added.emit(filename)
+        if self.isForDirectory():
+            dirname = QFileDialog.getExistingDirectory(None, 'Open Directory', '', QFileDialog.ShowDirsOnly)
+            if dirname:
+                self.__pathLineEdit.setText(dirname)
+                self.added.emit(dirname)
+        else:
+            str_exp_files_to_open = self.__ext_of_files if self.__ext_of_files else 'All Files (*.*)'
+            filename = QFileDialog.getOpenFileName(self, 'Find', '', str_exp_files_to_open)
+            if filename[0]:
+                filename = filename[0]
+                self.__pathLineEdit.setText(filename)
+                self.added.emit(filename)
+
+    def setAsDirectory(self, f: bool):
+        self.__directory = f
+
+    def isForDirectory(self) -> bool:
+        return self.__directory
 
 
 if __name__ == "__main__":
