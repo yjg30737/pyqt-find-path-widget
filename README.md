@@ -1,24 +1,22 @@
 # pyqt-find-path-widget
 PyQt find path widget (QLabel - QLineEdit - QPushButton)
 
-This widget's theme is dark.
-
 ## Requirements
 PyQt5 >= 5.8
 
 ## Setup
-```pip3 install git+https://github.com/yjg30737/pyqt-find-path-widget.git --upgrade```
+`python -m pip install pyqt-find-path-widget`
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
 
 ## Feature
-* ```findClicked``` Signal will be emitted when find button clicks
-* ```added``` Signal will be emitted when file's name is set in the QLineEdit
+* `findClicked` Signal will be emitted when find button clicks
+* `added` Signal will be emitted when file's name is set in the QLineEdit
 * "Open path" feature in context menu
 * Showing tooltip to show full path when QLineEdit is too short to do so
 * QLineEdit is set to read only in order to prevent malfunction from wrong input.
-* Being able to use ```setLabel(label: str)``` method to set the label. Label doesn't exist as default.
+* Being able to use `setLabel(label: str)` method to set the label. Label doesn't exist as default.
 
 ## Example
 ```python
