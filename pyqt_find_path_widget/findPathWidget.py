@@ -51,7 +51,7 @@ class FindPathWidget(QWidget):
     def getButton(self):
         return self.__pathFindBtn
 
-    def getFilename(self):
+    def getFileName(self):
         return self.__pathLineEdit.text()
 
     def setCustomFind(self, f: bool):
